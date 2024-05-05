@@ -3,12 +3,12 @@ from django.http import HttpResponse
 
 
 def about(request):
-    #template = '/index.html'
-    #return(render, template)
-    return HttpResponse(f'about')
+    template = 'pages/about.html'
+    return render(request, template)
+    #return HttpResponse(f'about')
 
 def rules(request):
-    #template = '/index.html'
-    #return(render, template)
-    return HttpResponse(f'rules')
+    template = 'pages/rules.html'
+    return render(request, template)
+    #return HttpResponse(f'rules')
 

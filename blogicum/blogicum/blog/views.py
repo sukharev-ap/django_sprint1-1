@@ -52,10 +52,12 @@ def index(request):
    # return HttpResponse(f'index')
 
 def post_detail(request, id):
-    #temlate = 'detail.html'
+    template = 'blog/post_detail.html'
     context = {'post': posts[id]}
-    #return render(request, temlate, context)
-    return HttpResponse(f'{context}')
+    return render(request, template, context)
+    #return HttpResponse(f'{context}')
 
-def category_posts(request, category_slug):
-    return HttpResponse('category post')
+def category_posts(request, category):
+    template = 'blog/category_posts.html'
+    #context = {'post':posts[category]}
+    return render(request, template)
