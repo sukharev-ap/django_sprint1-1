@@ -51,13 +51,13 @@ def index(request):
     return render(request, template_name)
    # return HttpResponse(f'index')
 
-def post_detail(request, id):
-    template = 'blog/post_detail.html'
+def detail(request, id):
+    template = 'blog/detail.html'
     context = {'post': posts[id]}
     return render(request, template, context)
     #return HttpResponse(f'{context}')
 
-def category_posts(request, category):
-    template = 'blog/category_posts.html'
-    #context = {'post':posts[category]}
+def category(request, category):
+    template = 'blog/category.html'
+    #context = {'category_posts':posts}
     return render(request, template)
