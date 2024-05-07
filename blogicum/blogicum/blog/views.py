@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
-posts = [
+posts:list = [
     {
         'id': 0,
         'location': 'Остров отчаянья',
@@ -48,16 +47,15 @@ posts = [
 
 def index(request):
     template_name = 'blog/index.html'
-    return render(request, template_name)
-   # return HttpResponse(f'index')
+    context = {'posts': posts}
+    return render(request, template_name, context)
 
-def detail(request, id):
+def post_detail(request, id):
     template = 'blog/detail.html'
-    context = {'post': posts[id]}
+    context = {'posts': posts[id]}
     return render(request, template, context)
-    #return HttpResponse(f'{context}')
 
-def category(request, category):
+def category_posts(request, category):
     template = 'blog/category.html'
-    #context = {'category_posts':posts}
-    return render(request, template)
+    context = {'category' : category}
+    return render(request, template, context)
