@@ -46,16 +46,25 @@ posts:list = [
 
 
 def index(request):
+    """
+    Обработка главной страницы.
+    """
     template_name = 'blog/index.html'
     context = {'posts': posts}
     return render(request, template_name, context)
 
 def post_detail(request, id):
+    """
+    Детализация поста.
+    """
     template = 'blog/detail.html'
-    context = {'posts': posts[id]}
+    context = {'post': posts[id]}
     return render(request, template, context)
 
 def category_posts(request, category):
+    """
+    Посты по выбранной категории.
+    """
     template = 'blog/category.html'
     context = {'category' : category}
     return render(request, template, context)
