@@ -146,7 +146,8 @@ dmypy.json
 .mypy_cache
 
 # папки со статикой и медиа
-media/
+static/
+html/
 
 # Testing
 build_tests/
